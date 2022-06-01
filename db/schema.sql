@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS stats_db;
+CREATE DATABASE stats_db;
