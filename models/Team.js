@@ -5,11 +5,27 @@ class Team extends Model {}
 
 Team.init(
   {
-    team_id: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
+    team_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    manager: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    league_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'league',
+        key: 'id'
+      }
+    }
   },
   {
     sequelize,
