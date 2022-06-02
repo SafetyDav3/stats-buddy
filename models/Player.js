@@ -10,6 +10,18 @@ Player.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    player_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    team_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'team',
+        key: 'id'
+      }
+    }
   },
   {
     sequelize,
