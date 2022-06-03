@@ -25,7 +25,7 @@ Team.init(
         model: 'league',
         key: 'id'
       }
-    }
+    },
   },
   {
     sequelize,

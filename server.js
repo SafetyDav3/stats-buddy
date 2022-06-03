@@ -19,3 +19,7 @@ app.use(routes);
 app.listen(PORT, () => {
     console.log(`Server live at address: http:localhost:${PORT} `);
 });
+
+// sequelize.sync({ force: false }).then(() => {
+//     app.listen(PORT, () => console.log('Now listening'));
+//   });
