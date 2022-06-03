@@ -12,46 +12,57 @@ Game.init(
     },
     ab: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         defaultValue: 0
     },
     hits: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         defaultValue: 0
     },
     bb: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         defaultValue: 0
     },
     strikeouts: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         defaultValue: 0
     },
     rbi: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         defaultValue: 0
     },
     rs: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         defaultValue: 0
     },
     innings: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         defaultValue: 0
     },
     earned_runs: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         defaultValue: 0
     },
     hitsGiven: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         defaultValue: 0
     },
     k: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         defaultValue: 0
     },
     walks: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         defaultValue: 0
     },
     average: {
