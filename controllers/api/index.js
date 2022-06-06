@@ -9,10 +9,10 @@ const teamRoutes = require('./team-routes');
 
 
 
-router.use('/games', gameRoutes);
+// router.use('/games', gameRoutes);
 router.use('/leagues', leagueRoutes);
-router.use('/players', playerRoutes);
-router.use('/teams', teamRoutes)
-router.use('/users', userRoutes)
+// router.use('/players', playerRoutes);
+router.use('/teams', teamRoutes);
+router.use('/users', userRoutes);
 
 module.exports = router;
