@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
       'manager',
       'league_id',
     ],
-    order: [['name', 'ASC']],
+    order: [['team_name', 'ASC']],
     include: [
       {
         model: Player,
@@ -58,8 +58,9 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   Team.create({
-    name: req.body.name,
-    user_id: req.body.user_id
+    team_name: req.body.team_name,
+    manager: req.body.manager,
+    league_id: req.body.league_id
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -71,7 +72,8 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   Team.update(
     {
-      name: req.body.name,
+      team_name: req.body.team_name,
+      manager: req.body.manager
     },
     {
       where: {
