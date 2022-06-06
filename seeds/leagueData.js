@@ -7,8 +7,6 @@ const leagueData = [
   },
 ];
 
-const seedLeague = () => {
-  League.bulkCreate(leagueData);
-};
+const seedLeagues = () => League.bulkCreate(leagueData);
 
-module.exports = seedLeague;
+module.exports = seedLeagues;

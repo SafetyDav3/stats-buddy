@@ -33,8 +33,6 @@ const teamData = [
   },
 ];
 
-const seedTeams = () => {
-  Team.bulkCreate(teamData);
-};
+const seedTeams = () => Team.bulkCreate(teamData);
 
 module.exports = seedTeams;

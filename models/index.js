@@ -10,7 +10,7 @@ User.hasMany(League, {
     foreignKey: 'user_id'
 });
 
-League.belongsToMany(User, {
+League.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
@@ -18,7 +18,7 @@ League.hasMany(Team, {
     foreignKey: 'league_id'
 });
 
-Team.belongsToMany(League, {
+Team.belongsTo(League, {
     foreignKey: 'league_id'
 });
 

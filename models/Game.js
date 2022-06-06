@@ -65,6 +65,14 @@ Game.init(
         allowNull: false,
         defaultValue: 0
     },
+    player_id:{
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'player',
+            key: 'id'
+        }
+    },
     average: {
         type: DataTypes.VIRTUAL,
         get(){
@@ -81,14 +89,6 @@ Game.init(
         type: DataTypes.VIRTUAL,
         get(){
             return (9 * (this.earned_runs/(Math.trunc(this.innings) + (10 * (this.innings - Math.trunc(this.innings))/3))));
-        }
-    },
-    player_id:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'player',
-            key: 'id'
         }
     }
   },

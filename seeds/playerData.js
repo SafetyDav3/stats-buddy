@@ -103,8 +103,6 @@ const playerData = [
   },
 ];
 
-const seedPlayers = () => {
-  Player.bulkCreate(playerData);
-};
+const seedPlayers = () => Player.bulkCreate(playerData);
 
 module.exports = seedPlayers;
