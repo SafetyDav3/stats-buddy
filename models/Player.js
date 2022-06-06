@@ -5,7 +5,7 @@ class Player extends Model {}
 
 Player.init(
   {
-    player_id: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
