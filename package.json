@@ -25,9 +25,10 @@
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
     "node": "^17.7.2",
-    "sequelize": "^6.20.1"
+    "sequelize": "^6.20.1",
+    "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
-  }
+}
 }

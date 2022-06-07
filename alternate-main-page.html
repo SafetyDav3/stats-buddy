@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+    
+        <div class="nav-wrapper blue lighten-3">
+          <img src="stats-buddy-logo-small.png" >
+          <a href="#!" class="brand-logo center blue-text">Stats Buddy</a>
+          <img src="stats-buddy-logo-small.png" class="right">
+        </div>
+      </nav>
+
+    <div class="row">
+
+        <div class="col l3 m3 s12 grey lighten-2">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="stats-buddy-logo.png">
+                      <!-- <span class="card-title">Card Title</span> -->
+                    </div>
+                    <div class="card-content center">
+                      <p>Welcome to Stats Buddy!</p>
+                      <br>
+                      <p>  Select your league from the dropdown menu below, or use the input field to add a new league</p>
+                    </div>
+                    <!-- <div class="card-action">
+                      <a href="#">This is a link</a>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+          <!-- Grey navigation panel -->
+          <!-- <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input placeholder="League Name" id="league_name" type="text" class="validate">
+                  <label for="league_name">Create New League <i class="material-icons right">assistant_photo</i></label> 
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input placeholder="Team Name" id="team_name" type="text" class="validate">
+                  <label for="team_name">Create New Team <i class="material-icons right">group</i></label> 
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input placeholder="Player Name" id="player_name" type="text" class="validate">
+                  <label for="player_name">Add New Player <i class="material-icons right">directions_walk</i></label> 
+                </div>
+              </div>
+            </form>
+          </div> -->
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">assistant_photo</i>
+                  <input id="icon_prefix" type="text" class="validate">
+                  <label for="icon_prefix">League Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">group</i>
+                  <input id="icon_prefix" type="text" class="validate">
+                  <label for="icon_prefix">Team Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">directions_walk</i>
+                  <input id="icon_prefix" type="text" class="validate">
+                  <label for="icon_prefix">Player Name</label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+  
+        <!-- <div class="col s9">
+            <div class="container">
+                <div class="row">
+                    <div class="col s3">Player Name</div>
+                    <div class="col s1">AB</div>
+                    <div class="col s1">R</div>
+                    <div class="col s1">H</div>
+                    <div class="col s1">RBI</div>
+                    <div class="col s1">BB</div>
+                    <div class="col s1">K</div>
+                    <div class="col s1">7</div>
+                    <div class="col s1">AVG</div>
+                    <div class="col s1">OBP</div>
+                  </div>
+              </div> -->
+
+              <table class="highlight centered responsive-table col s2">
+                <thead>
+                    <tr>
+                        <th>Team Name:</th>
+                        <th>The Micro Brewers</th>
+                    </tr>
+                </thead>
+              </table>
+                
+              <br>
+
+              <table class="highlight centered responsive-table col l9 m9 s12">
+                <thead>
+                  <tr>
+                      <th>Player Name</th>
+                      <th>At Bats</th>
+                      <th>Hits</th>
+                      <th>Walks</th>
+                      <th>Strikeouts</th>
+                      <th>RBIs</th>
+                      <th>Runs Scored</th>
+                      <th>Stolen Bases</th>
+                      <th>Average</th>
+                      <th>On Base Percentage</th>
+                      <th>Innings Pitched</th>
+                      <th>Earned Runs</th>
+                      <th>Earned Run Average</th>
+                      <th>Hits</th>
+                      <th>Strikeouts</th>
+                      <th>Walks</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    <td>lochlainn</td>
+                    <td>20</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>.250</td>
+                    <td>.350</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>Ramiz</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Tamara</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Peter</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Leroy</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Deeann</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Gil</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Mathis</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Lena</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Emilia</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Sujay</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Skye</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Ferdinand</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Michael</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Josh</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Raj</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Alex</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Samantha</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+  
+      </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
