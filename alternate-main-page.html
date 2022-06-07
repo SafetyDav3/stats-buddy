@@ -15,7 +15,7 @@
     
         <div class="nav-wrapper blue lighten-3">
           <img src="stats-buddy-logo-small.png" >
-          <a href="#!" class="brand-logo center blue-text">Stats Buddy</a>
+          <a href="#!" class="brand-logo center pink-text">Stats Buddy</a>
           <img src="stats-buddy-logo-small.png" class="right">
         </div>
       </nav>
@@ -24,7 +24,10 @@
 
         <div class="col l3 m3 s12 grey lighten-2">
             <div class="row">
-                <div class="col s10 offset-s1">
+                <div class="container">
+                    <p class="grey-text text-lighten-2"> Lorem ipsum dolor sit amet</p>
+                  </div>
+                <div class="col l8 offset-l2 s10 offset-s1">
                   <div class="card">
                     <div class="card-image">
                       <img src="stats-buddy-logo.png">
@@ -33,7 +36,7 @@
                     <div class="card-content center">
                       <p>Welcome to Stats Buddy!</p>
                       <br>
-                      <p>  Select your league from the dropdown menu below, or use the input field to add a new league</p>
+                      <p>Use the input field to add a new league, or select an existing league from the dropdown menu.</p>
                     </div>
                     <!-- <div class="card-action">
                       <a href="#">This is a link</a>
@@ -64,16 +67,19 @@
               </div>
             </form>
           </div> -->
-          <div class="row">
-            <form class="col s12">
+          <div class="row container center">
+            <form class="col card-panel l12 offset-l3 offset-m3 offset-s2">
               <div class="row">
                 <div class="input-field col s12">
                   <i class="material-icons prefix">assistant_photo</i>
                   <input id="icon_prefix" type="text" class="validate">
-                  <label for="icon_prefix">League Name</label>
+                  <label for="icon_prefix">New League Name</label>
+                  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                    </button>
                 </div>
               </div>
-              <div class="row">
+              <!-- <div class="row">
                 <div class="input-field col s12">
                   <i class="material-icons prefix">group</i>
                   <input id="icon_prefix" type="text" class="validate">
@@ -86,10 +92,38 @@
                   <input id="icon_prefix" type="text" class="validate">
                   <label for="icon_prefix">Player Name</label>
                 </div>
-              </div>
+              </div> -->
             </form>
+            
+            
+            <!-- <div class="input-field col s12">
+                <select>
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+              </div> -->
           </div>
+          <div class="container">
+            <div class="card-panel">
+                <div class="input-field">
+                    <select>
+                        <option value="" selected disabled>Choose Your League</option>
+                        <option value="1">Mad City Bat Brigade</option>
+                        <option value="2">Milwaukee's Finest </option>
+                        <option value="3">Appleton Aces</option>
+                    </select>
+                    <label>Leagues</label>
+                </div>
+            </div>
+            </div>
+            <div class="container">
+                <p class="grey-text text-lighten-2"> Lorem ipsum dolor sit amet</p>
+              </div>
         </div>
+        
   
         <!-- <div class="col s9">
             <div class="container">
@@ -107,9 +141,11 @@
                   </div>
               </div> -->
 
-              <table class="highlight centered responsive-table col s2">
+              <table class="highlight centered responsive-table col s4">
                 <thead>
                     <tr>
+                        <th>League Name:</th>
+                        <th>Milwaukee's Finest</th>
                         <th>Team Name:</th>
                         <th>The Micro Brewers</th>
                     </tr>
@@ -357,7 +393,7 @@
                     <td></td>
                     <td></td>
                   </tr>
-                  <tr>
+                  <!-- <tr>
                     <td>Ferdinand</td>
                     <td></td>
                     <td></td>
@@ -464,14 +500,49 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
         </div>
   
       </div>
 
+      <footer class="page-footer blue lighten-3">
+        <div class="container center">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="black-text">Stats Buddy Designed By:</h5>
+              <p class="black-text">Alan Edlebeck</p>
+              <p class="black-text">Alex Kress</p>
+              <p class="black-text">Mike McMahon</p>
+              <p class="black-text">David Williams</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="black-text">GitHub Links:</h5>
+                <p><a class="black-text" href="https://github.com/edlebeck" target="_blank">Alan Edlebeck GitHub</a></p>
+                <p><a class="black-text" href="https://github.com/Alex-Kress" target="_blank">Alex Kress GitHub</a></p>
+                <p><a class="black-text" href="https://github.com/mcmahonmike" target="_blank">Mike McMahon GitHub</a></p>
+                <p><a class="black-text" href="https://github.com/SafteyDav3" target="_blank">David Williams Github</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container center pink-text">
+            <img src="stats-buddy-logo-small.png" class="left">
+            © 2022 Red Jaguars
+            <img src="stats-buddy-logo-small.png" class="right">
+          <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+          </div>
+        </div>
+      </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var sel=document.querySelectorAll('select');
+            M.FormSelect.init(sel)
+        })
+    </script>
 </body>
 </html>
