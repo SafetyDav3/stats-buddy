@@ -1,8 +1,4 @@
 const router = require('express').Router();
-<<<<<<< HEAD
-const sequelize = require('../config/connection');
-const { League, Player, Team } = require('../models');
-=======
 const { User, League } = require('../../models');
 
 // get all users
@@ -92,4 +88,3 @@ router.post('/login', (req, res) => {
 });
 
 module.exports = router;
->>>>>>> 0559964f87051e4c7f89c77e0daa34fb701df309

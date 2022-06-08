@@ -1,8 +1,4 @@
 const router = require('express').Router();
-<<<<<<< HEAD
-const sequelize = require('../config/connection');
-const { League, Player, Team } = require('../models');
-=======
 const { Player, Team } = require('../../models');
 const withAuth = require('../../utils/auth');
 
@@ -118,4 +114,3 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router;
->>>>>>> 0559964f87051e4c7f89c77e0daa34fb701df309
