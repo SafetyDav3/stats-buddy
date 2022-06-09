@@ -7,11 +7,17 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stats Buddy</title>
 </head>
 <body>
   {{{ body }}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var sel=document.querySelectorAll('select');
+            M.FormSelect.init(sel)
+        })
+    </script>
 </body>
 </html>

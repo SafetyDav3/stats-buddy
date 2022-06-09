@@ -3,32 +3,43 @@ const { User, League, Player, Team, Game } = require('../models');
 const withAuth = require('../utils/auth');
 // : Import the custom middleware
 
+
 router.get('/', async (req, res) => {
-    League.findAll({
-      attributes: ['id', 'name']})
-      .then(dbPostData => {
-        const leagues = dbPostData.map(post => post.get({plain: true}));
-        res.render('homepage', {
-          leagues,
-          loggedIn: req.session.loggedIn
-        });
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-});
+  // if(req.session.loggedIn) {
+  //   res.redirect('/league');
+  //   return;
+  // }
+  
+  res.render('home')
+})
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
+  // if (req.session.loggedIn) {
+  //   res.redirect('/league');
+  //   return;
+  // }
 
   res.render('login');
 });
 
-router.get('/:id', (req, res) => {
+router.get('/league', async (req, res) => {
+  League.findAll({
+    attributes: ['id', 'name']})
+    .then(dbLeagueData => {
+      const leagues = dbLeagueData.map(league => league.get({plain: true}));
+      res.render('league', {
+        leagues,
+        // loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
+router.get('league/:id', (req, res) => {
   League.findOne({
     where: {
       id: req.params.id
@@ -65,10 +76,10 @@ router.get('/:id', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
+  // if (req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }
   res.render('signup');
 });
 
@@ -93,14 +104,13 @@ router.get('/team/:id', (req, res) => {
           res.status(404).json({ message: 'No team found with this id' });
           return;
         }
-  
         // serialize the data
         const players = dbPostData.get({ plain: true });
-  
+        console.log(players)
         // pass data to template
-        res.render('single-team', {
+        res.render('team', {
           players,
-          loggedIn: req.session.loggedIn
+          // loggedIn: req.session.loggedIn
         });
       })
       .catch(err => {
@@ -145,9 +155,9 @@ router.get('/team/:id', (req, res) => {
   
         // serialize the data
         const games = dbPostData.get({ plain: true });
-  
+        console.log(games)
         // pass data to template
-        res.render('single-player', {
+        res.render('player', {
           games,
           loggedIn: req.session.loggedIn
         });
