@@ -1,0 +1,51 @@
+<body>
+        <!-- This container is filled with white text that doesn't show up and is just to move the main content down to the center of the page -->
+        <div class="container">
+          <p class="white-text"> Lorem ipsum dolor sit amet</p>
+        </div>
+      </body>
+    
+    <div class="row">
+        <div class="col s10 offset-s1 m8 offset-m2 l4 offset-l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/stats-buddy-logo.png">
+            </div>
+            <div class="card-content center">
+              <h4 class="pink-text">Stats Buddy</h4>
+              <h5>Sign-Up</h5>
+              <h6>Please enter your email and chosen password below and press submit to create your account and login!</h6>
+            </div>
+            <div class="card-action center grey lighten-2">
+                <div class="row container center">
+                    <form class="col card-panel l12 offset-l3 offset-m3 offset-s2" id="signup-form">
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <i class="material-icons prefix">email</i>
+                              <input id="email-signup" type="text" class="validate">
+                              <label for="email-signup">Enter Email</label>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <i class="material-icons prefix">lock_open</i>
+                              <input id="password-signup" type="text" class="validate">
+                              <label for="password-signup">Enter Password</label>
+                            </div>
+                          </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <i class="material-icons prefix">lock_open</i>
+                          <input id="password-confirm" type="text" class="validate">
+                          <label for="password-confirm">Confirm Password</label>
+                          <button class="btn pink waves-effect waves-blue" type="submit" name="action" >Submit
+                            <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                      </div>
+                    </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="/js/signup.js"></script>

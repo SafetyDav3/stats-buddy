@@ -1,0 +1,118 @@
+  {{> nav}}
+
+    <div class="row">
+      {{> sidebar}}
+        {{!-- <div class="col l3 m3 s12 grey lighten-2">
+            <div class="row">
+                <div class="container">
+                    <p class="grey-text text-lighten-2"> Lorem ipsum dolor sit amet</p>
+                  </div>
+                <div class="col l8 offset-l2 s10 offset-s1">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="/images/stats-buddy-logo.png">
+                      <!-- <span class="card-title">Card Title</span> -->
+                    </div>
+                    <div class="card-content center">
+                      <p>Welcome to Stats Buddy!</p>
+                      <br>
+                      <p>Use the input field to add a new league, or select an existing league from the dropdown menu.</p>
+                    </div>
+                    </div>
+                </div>
+              </div>
+              <div class="row container center">
+            <form class="col card-panel l12 offset-l3 offset-m3 offset-s2">
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">assistant_photo</i>
+                  <input id="icon_prefix" type="text" class="validate">
+                  <label for="icon_prefix">New League Name</label>
+                  <button class="btn pink waves-effect waves-blue" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                    </button>
+                </div>
+              </div>
+              </form>
+              </div>
+          <div class="container">
+            <div class="card-panel">
+                <div class="input-field">
+                    <select>
+                        <option value="" selected disabled>Choose Your League</option>
+                        <option value="1">Mad City Bat Brigade</option>
+                        <option value="2">Milwaukee's Finest </option>
+                        <option value="3">Appleton Aces</option>
+                    </select>
+                    <label>Leagues</label>
+                </div>
+            </div>
+            </div>
+            <div class="container">
+                <p class="grey-text text-lighten-2"> Lorem ipsum dolor sit amet</p>
+              </div>
+        </div> --}}
+        <div class="row container center">
+                <form class="col card-panel l3">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">directions_walk</i>
+                      <input id="icon_prefix" type="text" class="validate">
+                      <label for="icon_prefix">Add New Team's Name</label>
+                      <button class="btn pink waves-effect waves-blue" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                  </div>
+                </form>
+
+              <table class="highlight centered responsive-table col s4">
+                <thead>
+                    <tr>
+                        <th>League Name:</th>
+                        <th>Milwaukee's Finest</th>
+                    </tr>
+                </thead>
+              </table>
+
+              <br>
+
+              <table class="highlight centered responsive-table col l9 m9 s12">
+                <thead>
+                  <tr>
+                      <th>Teams in League</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    <td>Aces of Bases</td>
+                  </tr>
+                  <tr>
+                    <td>McGlovin</td>
+                  </tr>
+                  <tr>
+                    <td>Bat Attitudes</td>
+                  </tr>
+                  <tr>
+                    <td>Balk Paper Scissors</td>
+                  </tr>
+                  <tr>
+                    <td>Ball of Duty</td>
+                  </tr>
+                  <tr>
+                    <td>One Hit Wonders</td>
+                  </tr>
+                  <tr>
+                    <td>Base Invaders</td>
+                  </tr>
+                  <tr>
+                    <td>Umpire Strikes Back</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+  
+      </div>
+
+      {{> footer}}
