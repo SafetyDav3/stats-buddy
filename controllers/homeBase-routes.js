@@ -1,7 +1,161 @@
-// const router = require('express').Router();
-// const sequelize = require('../config/connection');
-// const { League, Player, Team } = require('../models');
+const router = require('express').Router();
+const { User, League, Player, Team, Game } = require('../models');
+const withAuth = require('../utils/auth');
+// : Import the custom middleware
 
-// router.get('/', async, (req, res) => {
-    
-// });
+router.get('/', async (req, res) => {
+    League.findAll({
+      attributes: ['id', 'name']})
+      .then(dbPostData => {
+        const leagues = dbPostData.map(post => post.get({plain: true}));
+        res.render('homepage', {
+          leagues,
+          loggedIn: req.session.loggedIn
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+});
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
+});
+
+router.get('/:id', (req, res) => {
+  League.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+        'name'
+    ],
+    include: [
+      {
+        model: Team,
+        attributes: ['id', 'team_name', 'manager'],
+      }
+    ]
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No league found with this id' });
+        return;
+      }
+
+      // serialize the data
+      const teams = dbPostData.get({ plain: true });
+
+      // pass data to template
+      res.render('single-league', {
+        teams,
+        loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('signup');
+});
+
+router.get('/team/:id', (req, res) => {
+    Team.findOne({
+      where: {
+        id: req.params.id
+      },
+      attributes: [
+          'team_name',
+          'manager'
+      ],
+      include: [
+        {
+          model: Player,
+          attributes: ['id', 'player_name'],
+        }
+      ]
+    })
+      .then(dbPostData => {
+        if (!dbPostData) {
+          res.status(404).json({ message: 'No team found with this id' });
+          return;
+        }
+  
+        // serialize the data
+        const players = dbPostData.get({ plain: true });
+  
+        // pass data to template
+        res.render('single-team', {
+          players,
+          loggedIn: req.session.loggedIn
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
+  router.get('player/:id', (req, res) => {
+    Player.findOne({
+      where: {
+        id: req.params.id
+      },
+      attributes: [
+          'player_name'
+      ],
+      include: [
+        {
+          model: Game,
+          attributes: [
+            'id',
+              'ab',
+              'hits',
+              'bb',
+              'strikeouts',
+              'rbi',
+              'rs',
+              'innings',
+              'earned_runs',
+              'hitsGiven',
+              'k',
+              'walks'
+          ]
+        }
+      ]
+    })
+      .then(dbPostData => {
+        if (!dbPostData) {
+          res.status(404).json({ message: 'No player found with this id' });
+          return;
+        }
+  
+        // serialize the data
+        const games = dbPostData.get({ plain: true });
+  
+        // pass data to template
+        res.render('single-player', {
+          games,
+          loggedIn: req.session.loggedIn
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
+module.exports = router;

@@ -46,3 +46,11 @@ CREATE TABLE stats (
   hits INT DEFAULT 0,
   average DEC(10, 3) GENERATED ALWAYS AS ( hits / ab )
 );
+
+home (leagues)
+login
+signup
+logout (redirect to signin)
+individual league (shows all teams for that league)
+individual team (shows all players with season stats)
+individual player (shows individual game stats)
