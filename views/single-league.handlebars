@@ -1,4 +1,4 @@
-  {{> nav}}
+  {{> nav pageTitle}}
 
     <div class="row">
       {{> sidebar}}
@@ -20,7 +20,7 @@
                 <thead>
                     <tr>
                         <th>League Name:</th>
-                        <th>{{teams.name}}</th>
+                        <th><a href="/leagues">{{teams.name}}</a></th>
                     </tr>
                 </thead>
               </table>

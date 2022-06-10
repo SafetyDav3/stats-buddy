@@ -1,4 +1,4 @@
-{{> nav}}
+{{> nav pageTitle}}
 
     <div class="row">
 
@@ -8,9 +8,9 @@
                 <thead>
                     <tr>
                         <th>League Name:</th>
-                        <th>Milwaukee's Finest</th>
+                        <th><a href="/league/{{games.team.league_id}}">{{games.team.league.name}}</a></th>
                         <th>Team Name:</th>
-                        <th>The Micro Brewers</th>
+                        <th><a href="/team/{{games.team_id}}">{{games.team.team_name}}</a></th>
                         <th>Player Name:</th>
                         <th>lochlainn</th>
                     </tr>
@@ -35,85 +35,33 @@
                       <th>Innings Pitched</th>
                       <th>Earned Runs</th>
                       <th>Earned Run Average</th>
-                      <th>Hits</th>
-                      <th>Strikeouts</th>
-                      <th>Walks</th>
+                      <th>Hits Given</th>
+                      <th>Struckout</th>
+                      <th>Walks Allowed</th>
                   </tr>
                 </thead>
         
                 <tbody>
+                  {{#each games.games}}
                   <tr>
-                    <td>Game 1</td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>.333</td>
-                    <td>.333</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td>{{inc @key}}</td>
+                    <td>{{ab}}</td>
+                    <td>{{hits}}</td>
+                    <td>{{bb}}</td>
+                    <td>{{strikeouts}}</td>
+                    <td>{{rbi}}</td>
+                    <td>{{rs}}</td>
+                    <td>{{sb}}</td>
+                    <td>{{average}}</td>
+                    <td>{{obp}}</td>
+                    <td>{{innings}}</td>
+                    <td>{{earned_runs}}</td>
+                    <td>{{era}}</td>
+                    <td>{{hitsGiven}}</td>
+                    <td>{{k}}</td>
+                    <td>{{walks}}</td>
                   </tr>
-                  <tr>
-                    <td>Game 2</td>
-                    <td>6</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>.333</td>
-                    <td>.500</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>Game 3</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>.400</td>
-                    <td>.400</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>Game 4</td>
-                    <td>6</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>.000</td>
-                    <td>.167</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
+                  {{/each}}
                 </tbody>
               </table>
               <div class="row container center">
