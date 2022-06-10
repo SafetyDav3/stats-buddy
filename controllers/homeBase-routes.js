@@ -22,12 +22,12 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/league', async (req, res) => {
+router.get('/leagues', async (req, res) => {
   League.findAll({
     attributes: ['id', 'name']})
     .then(dbLeagueData => {
       const leagues = dbLeagueData.map(league => league.get({plain: true}));
-      res.render('league', {
+      res.render('leagues', {
         leagues,
         // loggedIn: req.session.loggedIn
       });
@@ -39,7 +39,7 @@ router.get('/league', async (req, res) => {
 });
 
 
-router.get('league/:id', (req, res) => {
+router.get('/league/:id', (req, res) => {
   League.findOne({
     where: {
       id: req.params.id
@@ -54,14 +54,15 @@ router.get('league/:id', (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
+    .then(dbLeagueData => {
+      if (!dbLeagueData) {
         res.status(404).json({ message: 'No league found with this id' });
         return;
       }
 
       // serialize the data
-      const teams = dbPostData.get({ plain: true });
+      const teams = dbLeagueData.get({ plain: true });
+      console.log(teams)
 
       // pass data to template
       res.render('single-league', {
@@ -119,7 +120,7 @@ router.get('/team/:id', (req, res) => {
       });
   });
 
-  router.get('player/:id', (req, res) => {
+  router.get('/player/:id', (req, res) => {
     Player.findOne({
       where: {
         id: req.params.id

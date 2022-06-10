@@ -4,21 +4,19 @@
         {{> sidebar}}
         
   
-        <!-- <div class="col s9">
-            <div class="container">
-                <div class="row">
-                    <div class="col s3">Player Name</div>
-                    <div class="col s1">AB</div>
-                    <div class="col s1">R</div>
-                    <div class="col s1">H</div>
-                    <div class="col s1">RBI</div>
-                    <div class="col s1">BB</div>
-                    <div class="col s1">K</div>
-                    <div class="col s1">7</div>
-                    <div class="col s1">AVG</div>
-                    <div class="col s1">OBP</div>
+              <div class="row container center">
+                <form class="col card-panel l3">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">directions_walk</i>
+                      <input id="icon_prefix" type="text" class="validate">
+                      <label for="icon_prefix">Add New Player's Name</label>
+                      <button class="btn pink waves-effect waves-blue" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                        </button>
+                    </div>
                   </div>
-              </div> -->
+                </form>
 
               <table class="highlight centered responsive-table col s4">
                 <thead>
@@ -27,8 +25,6 @@
                         <th>Milwaukee's Finest</th>
                         <th>Team Name:</th>
                         <th>The Micro Brewers</th>
-                        <th>Player Name:</th>
-                        <th>lochlainn</th>
                     </tr>
                 </thead>
               </table>
@@ -38,7 +34,7 @@
               <table class="highlight centered responsive-table col l9 m9 s12">
                 <thead>
                   <tr>
-                      <th>Game Number</th>
+                      <th>Player Name</th>
                       <th>At Bats</th>
                       <th>Hits</th>
                       <th>Walks</th>
@@ -59,52 +55,16 @@
         
                 <tbody>
                   <tr>
-                    <td>Game 1</td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>.333</td>
-                    <td>.333</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>Game 2</td>
-                    <td>6</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>.333</td>
-                    <td>.500</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>Game 3</td>
+                    <td>lochlainn</td>
+                    <td>20</td>
                     <td>5</td>
                     <td>2</td>
-                    <td>0</td>
-                    <td>3</td>
+                    <td>13</td>
+                    <td>2</td>
+                    <td>2</td>
                     <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>.400</td>
-                    <td>.400</td>
+                    <td>.250</td>
+                    <td>.350</td>
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
@@ -113,116 +73,313 @@
                     <td>0</td>
                   </tr>
                   <tr>
-                    <td>Game 4</td>
-                    <td>6</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>.000</td>
-                    <td>.167</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td>Ramiz</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
+                  <tr>
+                    <td>Tamara</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Peter</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Leroy</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Deeann</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Gil</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Mathis</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Lena</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Emilia</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Sujay</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Skye</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <!-- <tr>
+                    <td>Ferdinand</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Michael</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Josh</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Raj</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Alex</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Samantha</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr> -->
                 </tbody>
               </table>
-              <div class="row container center">
-                <form class="col card-panel l3">
-                    <p>Enter New Game Stats in Fields Below and the Click Submit</p>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of At Bats</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Hits</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Walks</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Strikeouts</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of RBIs</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Runs Scored</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Stolen Bases</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Innings Pitched</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Earned Runs</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Hits</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Strikeouts</label>
-                        </div>
-                      </div>
-                    <div class="row">
-                    <div class="input-field col s12">
-                      <i class="material-icons prefix">assessment</i>
-                      <input id="icon_prefix" type="text" class="validate">
-                      <label for="icon_prefix">Enter # of Walks</label>
-                      <button class="btn pink waves-effect waves-blue" type="submit" name="action">Submit
-                        <i class="material-icons right">send</i>
-                        </button>
-                    </div>
-                  </div>
-                </form>
         </div>
   
       </div>
