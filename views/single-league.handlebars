@@ -16,18 +16,18 @@
                   </div>
                 </form>
 
-              <table class="highlight centered col s4">
+              <table class="highlight centered responsive-table col s4">
                 <thead>
                     <tr>
                         <th>League Name:</th>
-                        <th>Milwaukee's Finest</th>
+                        <th>{{teams.name}}</th>
                     </tr>
                 </thead>
               </table>
 
               <br>
 
-              <table class="highlight centered col l9 m9 s12">
+              <table class="highlight centered responsive-table col l9 m9 s12">
                 <thead>
                   <tr>
                       <th>Teams in League</th>
@@ -35,30 +35,13 @@
                 </thead>
         
                 <tbody>
+
+                  {{#each teams.teams}}
                   <tr>
-                    <td>Aces of Bases</td>
+                    <td><a href="/team/{{id}}">{{team_name}} managed by {{manager}}</a></td>
                   </tr>
-                  <tr>
-                    <td>McGlovin</td>
-                  </tr>
-                  <tr>
-                    <td>Bat Attitudes</td>
-                  </tr>
-                  <tr>
-                    <td>Balk Paper Scissors</td>
-                  </tr>
-                  <tr>
-                    <td>Ball of Duty</td>
-                  </tr>
-                  <tr>
-                    <td>One Hit Wonders</td>
-                  </tr>
-                  <tr>
-                    <td>Base Invaders</td>
-                  </tr>
-                  <tr>
-                    <td>Umpire Strikes Back</td>
-                  </tr>
+                  {{/each}}
+                
                 </tbody>
               </table>
         </div>
