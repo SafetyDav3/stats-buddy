@@ -112,6 +112,7 @@ router.get('/team/:id', withAuth, (req, res) => {
             'strikeouts',
             'rbi',
             'rs',
+            'sb',
             'innings',
             'earned_runs',
             'hitsGiven',

@@ -27,7 +27,6 @@ module.exports ={
             seasonK = seasonK + statArray[i].k
             seasonWalks = seasonWalks + statArray[i].walks
         }
-
         let seasonAVG = (seasonHits/seasonAB).toFixed(3)
         let seasonOBP = ((seasonHits+seasonBB)/(seasonAB+seasonBB)).toFixed(3)
         let seasonERA = (9 * (seasonEarnedRuns/seasonInnings)).toFixed(2)
