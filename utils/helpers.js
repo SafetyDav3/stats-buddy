@@ -28,13 +28,13 @@ module.exports ={
             seasonWalks = seasonWalks + statArray[i].walks
         }
 
-        let seasonAVG = seasonHits/seasonAB
-        let seasonOBP = (seasonHits+seasonBB)/(seasonAB+seasonBB)
-        let seasonERA = 9 * (seasonEarnedRuns/seasonInnings)
+        let seasonAVG = (seasonHits/seasonAB).toFixed(3)
+        let seasonOBP = ((seasonHits+seasonBB)/(seasonAB+seasonBB)).toFixed(3)
+        let seasonERA = (9 * (seasonEarnedRuns/seasonInnings)).toFixed(2)
 
         seasonInnings = Math.trunc(seasonInnings) + (((seasonInnings - Math.trunc(seasonInnings)) * 3) / 10)
         
-        const seasonData = '<td>' + seasonAB + '</td><td>' + seasonHits + '</td><td>' + seasonBB + '</td><td>' + seasonStrikeouts + '</td><td>' + seasonRBIs + '</td><td>' + seasonRS + + '</td><td>' + seasonSB  + '</td><td>' + seasonAVG + '</td><td>' + seasonOBP + '</td><td>' + seasonInnings + '</td><td>' + seasonEarnedRuns + '</td><td>' + seasonERA + '</td><td>' + seasonHitsGiven + '</td><td>' + seasonK + '</td><td>' + seasonWalks + '</td>';  
+        const seasonData = '<td>' + seasonAB + '</td><td>' + seasonHits + '</td><td>' + seasonBB + '</td><td>' + seasonStrikeouts + '</td><td>' + seasonRBIs + '</td><td>' + seasonRS + '</td><td>' + seasonSB + '</td><td>' + seasonAVG + '</td><td>' + seasonOBP + '</td><td>' + seasonInnings + '</td><td>' + seasonEarnedRuns + '</td><td>' + seasonERA + '</td><td>' + seasonHitsGiven + '</td><td>' + seasonK + '</td><td>' + seasonWalks + '</td>';  
                                                                                                                                                                                                                                                            
 
         return seasonData;
