@@ -1,15 +1,15 @@
-  {{> nav}}
+  {{> nav pageTitle}}
 
     <div class="row">
       {{> sidebar}}
         <div class="row container center">
-                <form class="col card-panel l3">
+                <form class="col card-panel l3" id="add-team">
                   <div class="row">
                     <div class="input-field col s12">
                       <i class="material-icons prefix">directions_walk</i>
-                      <input id="icon_prefix" type="text" class="validate">
-                      <label for="icon_prefix">Add New Team's Name</label>
-                      <button class="btn pink waves-effect waves-blue" type="submit" name="action">Submit
+                      <input id="team-input" type="text" class="validate">
+                      <label for="team-input">Add New Team's Name</label>
+                      <button class="btn pink waves-effect waves-blue" type="submit">Submit
                         <i class="material-icons right">send</i>
                         </button>
                     </div>
@@ -20,7 +20,7 @@
                 <thead>
                     <tr>
                         <th>League Name:</th>
-                        <th>{{teams.name}}</th>
+                        <th><a href="/leagues">{{teams.name}}</a></th>
                     </tr>
                 </thead>
               </table>
@@ -49,3 +49,4 @@
       </div>
 
       {{> footer}}
+<script src="/js/add-team.js"></script>

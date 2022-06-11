@@ -64,18 +64,18 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   Game.create({
-      ab: req.body.ab,
-      hits: req.body.hits,
-      bb: req.body.bb,
-      strikeouts: req.body.strikeouts,
-      rbi: req.body.rbi,
-      rs: req.body.rs,
-      innings: req.body.innings,
-      earned_runs: req.body.innings,
-      hitsGiven: req.body.hitsGiven,
-      k: req.body.k,
-      walk: req.body.walk,
-      //HOW DO WE GET THIS?
+      ab: req.body.gameAB,
+      hits: req.body.gameHits,
+      bb: req.body.gameBB,
+      strikeouts: req.body.gameStrikeouts,
+      rbi: req.body.gameRBI,
+      rs: req.body.gameRS,
+      sb: req.body.gameSB,
+      innings: req.body.gameInnings,
+      earned_runs: req.body.gameEarnedRuns,
+      hitsGiven: req.body.gameHitsGiven,
+      k: req.body.gameK,
+      walk: req.body.gameWalk,
       player_id: req.body.player_id
   })
     .then(dbPostData => res.json(dbPostData))

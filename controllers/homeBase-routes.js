@@ -5,31 +5,34 @@ const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
-  // if(req.session.loggedIn) {
-  //   res.redirect('/league');
-  //   return;
-  // }
+  if(req.session.loggedIn) {
+    res.redirect('/leagues');
+    return;
+  }
   
   res.render('home')
 })
 
 router.get('/login', (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect('/league');
-  //   return;
-  // }
+  if (req.session.loggedIn) {
+    res.redirect('/leagues');
+    return;
+  }
 
   res.render('login');
 });
 
-router.get('/leagues', async (req, res) => {
+router.get('/leagues', withAuth, async (req, res) => {
   League.findAll({
     attributes: ['id', 'name']})
     .then(dbLeagueData => {
       const leagues = dbLeagueData.map(league => league.get({plain: true}));
+      const pageTitle = {pageTitle: 'All Leagues'}
+      console.log(leagues)
       res.render('leagues', {
         leagues,
-        // loggedIn: req.session.loggedIn
+        pageTitle,
+        loggedIn: req.session.loggedIn
       });
     })
     .catch(err => {
@@ -39,13 +42,13 @@ router.get('/leagues', async (req, res) => {
 });
 
 
-router.get('/league/:id', (req, res) => {
+router.get('/league/:id', withAuth, (req, res) => {
   League.findOne({
     where: {
       id: req.params.id
     },
     attributes: [
-        'name'
+        'id', 'name'
     ],
     include: [
       {
@@ -62,11 +65,12 @@ router.get('/league/:id', (req, res) => {
 
       // serialize the data
       const teams = dbLeagueData.get({ plain: true });
-      console.log(teams)
+      const pageTitle = {pageTitle: 'All League Teams'};
 
       // pass data to template
       res.render('single-league', {
         teams,
+        pageTitle,
         loggedIn: req.session.loggedIn
       });
     })
@@ -77,26 +81,50 @@ router.get('/league/:id', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect('/');
-  //   return;
-  // }
+  if (req.session.loggedIn) {
+    res.redirect('/leagues');
+    return;
+  }
   res.render('signup');
 });
 
-router.get('/team/:id', (req, res) => {
+router.get('/team/:id', withAuth, (req, res) => {
     Team.findOne({
       where: {
         id: req.params.id
       },
       attributes: [
+          'id',
           'team_name',
-          'manager'
+          'manager',
+          'league_id'
       ],
       include: [
         {
           model: Player,
           attributes: ['id', 'player_name'],
+          include: [ {
+            model: Game,
+            attributes: [              
+            'ab',
+            'hits',
+            'bb',
+            'strikeouts',
+            'rbi',
+            'rs',
+            'sb',
+            'innings',
+            'earned_runs',
+            'hitsGiven',
+            'k',
+            'walks']
+          }]
+        },
+        {
+          model: League,
+          attributes: [
+            'name'
+          ]
         }
       ]
     })
@@ -107,11 +135,15 @@ router.get('/team/:id', (req, res) => {
         }
         // serialize the data
         const players = dbPostData.get({ plain: true });
+        const pageTitle = {pageTitle: 'Team Info'}
         console.log(players)
+        
+
         // pass data to template
         res.render('team', {
           players,
-          // loggedIn: req.session.loggedIn
+          pageTitle,
+          loggedIn: req.session.loggedIn
         });
       })
       .catch(err => {
@@ -120,13 +152,14 @@ router.get('/team/:id', (req, res) => {
       });
   });
 
-  router.get('/player/:id', (req, res) => {
+  router.get('/player/:id', withAuth, (req, res) => {
     Player.findOne({
       where: {
         id: req.params.id
       },
       attributes: [
-          'player_name'
+          'player_name',
+          'team_id'
       ],
       include: [
         {
@@ -139,13 +172,33 @@ router.get('/team/:id', (req, res) => {
               'strikeouts',
               'rbi',
               'rs',
+              'sb',
               'innings',
               'earned_runs',
               'hitsGiven',
               'k',
-              'walks'
+              'walks',
+              'player_id',
+              'average',
+              'obp',
+              'era'
+          ]
+        },
+        {
+          model: Team,
+          attributes:[
+            'team_name',
+            'league_id'
+          ],
+          include: [{
+            model: League,
+            attributes: [
+              'name'
+            ]
+          }
           ]
         }
+
       ]
     })
       .then(dbPostData => {
@@ -156,10 +209,12 @@ router.get('/team/:id', (req, res) => {
   
         // serialize the data
         const games = dbPostData.get({ plain: true });
+        const pageTitle = {pageTitle: 'Player Stats'}
         console.log(games)
         // pass data to template
         res.render('player', {
           games,
+          pageTitle,
           loggedIn: req.session.loggedIn
         });
       })

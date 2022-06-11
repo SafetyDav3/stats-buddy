@@ -40,8 +40,13 @@ Game.init(
         allowNull: false,
         defaultValue: 0
     },
-    innings: {
+    sb: {
         type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0
+    },
+    innings: {
+        type: DataTypes.DECIMAL,
         allowNull: false,
         defaultValue: 0
     },
@@ -76,19 +81,19 @@ Game.init(
     average: {
         type: DataTypes.VIRTUAL,
         get(){
-            return (this.hits/this.ab)
+            return ((this.hits/this.ab).toFixed(3))
         },
     },
     obp: {
         type: DataTypes.VIRTUAL,
         get(){
-            return ((this.hits+this.bb)/(this.hits))
+            return (((this.hits+this.bb)/(this.ab)).toFixed(3))
         }
     },
     era: {
         type: DataTypes.VIRTUAL,
         get(){
-            return (9 * (this.earned_runs/(Math.trunc(this.innings) + (10 * (this.innings - Math.trunc(this.innings))/3))));
+            return ((9 * (this.earned_runs/(Math.trunc(this.innings) + (10 * (this.innings - Math.trunc(this.innings))/3))).toFixed(2)));
         }
     }
   },

@@ -1,4 +1,4 @@
-{{> nav}}
+{{> nav pageTitle}}
 
     <div class="row">
 
@@ -8,11 +8,11 @@
                 <thead>
                     <tr>
                         <th>League Name:</th>
-                        <th>Milwaukee's Finest</th>
+                        <th><a href="/league/{{games.team.league_id}}">{{games.team.league.name}}</a></th>
                         <th>Team Name:</th>
-                        <th>The Micro Brewers</th>
+                        <th><a href="/team/{{games.team_id}}">{{games.team.team_name}}</a></th>
                         <th>Player Name:</th>
-                        <th>lochlainn</th>
+                        <th>{{games.player_name}}</th>
                     </tr>
                 </thead>
               </table>
@@ -35,173 +35,121 @@
                       <th>Innings Pitched</th>
                       <th>Earned Runs</th>
                       <th>Earned Run Average</th>
-                      <th>Hits</th>
-                      <th>Strikeouts</th>
-                      <th>Walks</th>
+                      <th>Hits Given</th>
+                      <th>Struckout</th>
+                      <th>Walks Allowed</th>
                   </tr>
                 </thead>
         
                 <tbody>
+                  {{#each games.games}}
                   <tr>
-                    <td>Game 1</td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>.333</td>
-                    <td>.333</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td>{{inc @key}}</td>
+                    <td>{{ab}}</td>
+                    <td>{{hits}}</td>
+                    <td>{{bb}}</td>
+                    <td>{{strikeouts}}</td>
+                    <td>{{rbi}}</td>
+                    <td>{{rs}}</td>
+                    <td>{{sb}}</td>
+                    <td>{{average}}</td>
+                    <td>{{obp}}</td>
+                    <td>{{innings}}</td>
+                    <td>{{earned_runs}}</td>
+                    <td>{{era}}</td>
+                    <td>{{hitsGiven}}</td>
+                    <td>{{k}}</td>
+                    <td>{{walks}}</td>
                   </tr>
-                  <tr>
-                    <td>Game 2</td>
-                    <td>6</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>.333</td>
-                    <td>.500</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>Game 3</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>.400</td>
-                    <td>.400</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>Game 4</td>
-                    <td>6</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>.000</td>
-                    <td>.167</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
+                  {{/each}}
                 </tbody>
               </table>
               <div class="row container center">
-                <form class="col card-panel l3">
+                <form class="col card-panel l3" id="add-game">
                     <p>Enter New Game Stats in Fields Below and the Click Submit</p>
                       <div class="row">
                         <div class="input-field col s12">
                           <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of At Bats</label>
+                          <input id="game-ab" type="number" class="validate">
+                          <label for="game-ab">Enter # of At Bats</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s12">
                           <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Hits</label>
+                          <input id="game-hits" type="number" class="validate">
+                          <label for="game-hits">Enter # of Hits</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s12">
                           <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Walks</label>
+                          <input id="game-bb" type="number" class="validate">
+                          <label for="game-bb">Enter # of Walks</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s12">
                           <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Strikeouts</label>
+                          <input id="game-strikeouts" type="number" class="validate">
+                          <label for="game-strikeouts">Enter # of Strikeouts</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s12">
                           <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of RBIs</label>
+                          <input id="game-rbi" type="number" class="validate">
+                          <label for="game-rbi">Enter # of RBIs</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s12">
                           <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Runs Scored</label>
+                          <input id="game-rs" type="number" class="validate">
+                          <label for="game-rs">Enter # of Runs Scored</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s12">
                           <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Stolen Bases</label>
+                          <input id="game-sb" type="number" class="validate">
+                          <label for="game-sb">Enter # of Stolen Bases</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s12">
                           <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Innings Pitched</label>
+                          <input id="game-innings" type="number" class="validate">
+                          <label for="game-innings">Enter # of Innings Pitched</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s12">
                           <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Earned Runs</label>
+                          <input id="game-earned-runs" type="number" class="validate">
+                          <label for="game-earned-runs">Enter # of Earned Runs</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s12">
                           <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Hits</label>
+                          <input id="game-hits-given" type="number" class="validate">
+                          <label for="game-hits-given">Enter # of Hits Given Up</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s12">
                           <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Strikeouts</label>
+                          <input id="game-k" type="number" class="validate">
+                          <label for="game-k">Enter # of Batters Struckout</label>
                         </div>
                       </div>
                     <div class="row">
                     <div class="input-field col s12">
                       <i class="material-icons prefix">assessment</i>
-                      <input id="icon_prefix" type="text" class="validate">
-                      <label for="icon_prefix">Enter # of Walks</label>
-                      <button class="btn pink waves-effect waves-blue" type="submit" name="action">Submit
+                      <input id="game-walks" type="number" class="validate">
+                      <label for="game-walks">Enter # of Walks Allowed</label>
+                      <button class="btn pink waves-effect waves-blue" type="submit">Submit
                         <i class="material-icons right">send</i>
                         </button>
                     </div>
@@ -210,271 +158,5 @@
         </div>
   
       </div>
-          <nav>
-    
-        <div class="nav-wrapper blue lighten-3">
-            <a href="#!"><img src="stats-buddy-logo-small.png"></a>
-          <a href="#!" class="brand-logo center pink-text">Player Page</a>
-          <a href="#!"><img src="stats-buddy-logo-small.png" class="right"></a>
-        </div>
-      </nav>
-
-    <div class="row">
-
-        <div class="col l3 m3 s12 grey lighten-2">
-            <div class="row">
-                <div class="container">
-                    <p class="grey-text text-lighten-2"> Lorem ipsum dolor sit amet</p>
-                  </div>
-                <div class="col l8 offset-l2 s10 offset-s1">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="stats-buddy-logo.png">
-                    </div>
-                    <div class="card-content center">
-                      <p>Welcome to Stats Buddy!</p>
-                      <br>
-                      <p>Use the input field to add a new league, or select an existing league from the dropdown menu.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          <div class="row container center">
-            <form class="col card-panel l12 offset-l3 offset-m3 offset-s2">
-              <div class="row">
-                <div class="input-field col s12">
-                  <i class="material-icons prefix">assistant_photo</i>
-                  <input id="icon_prefix" type="text" class="validate">
-                  <label for="icon_prefix">New League Name</label>
-                  <button class="btn pink waves-effect waves-blue" type="submit" name="action">Submit
-                    <i class="material-icons right">send</i>
-                    </button>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="container">
-            <div class="card-panel">
-                <div class="input-field">
-                    <select>
-                        <option value="" selected disabled>Choose Your League</option>
-                        <option value="1">Mad City Bat Brigade</option>
-                        <option value="2">Milwaukee's Finest </option>
-                        <option value="3">Appleton Aces</option>
-                    </select>
-                    <label>Leagues</label>
-                </div>
-            </div>
-            </div>
-            <div class="container">
-                <p class="grey-text text-lighten-2"> Lorem ipsum dolor sit amet</p>
-              </div>
-        </div>
-              <table class="highlight centered responsive-table col s4">
-                <thead>
-                    <tr>
-                        <th>League Name:</th>
-                        <th>Milwaukee's Finest</th>
-                        <th>Team Name:</th>
-                        <th>The Micro Brewers</th>
-                        <th>Player Name:</th>
-                        <th>lochlainn</th>
-                    </tr>
-                </thead>
-              </table>
-
-              <br>
-
-              <table class="highlight centered responsive-table col l9 m9 s12">
-                <thead>
-                  <tr>
-                      <th>Game Number</th>
-                      <th>At Bats</th>
-                      <th>Hits</th>
-                      <th>Walks</th>
-                      <th>Strikeouts</th>
-                      <th>RBIs</th>
-                      <th>Runs Scored</th>
-                      <th>Stolen Bases</th>
-                      <th>Average</th>
-                      <th>On Base Percentage</th>
-                      <th>Innings Pitched</th>
-                      <th>Earned Runs</th>
-                      <th>Earned Run Average</th>
-                      <th>Hits</th>
-                      <th>Strikeouts</th>
-                      <th>Walks</th>
-                  </tr>
-                </thead>
-        
-                <tbody>
-                  <tr>
-                    <td>Game 1</td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>.333</td>
-                    <td>.333</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>Game 2</td>
-                    <td>6</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>.333</td>
-                    <td>.500</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>Game 3</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>.400</td>
-                    <td>.400</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>Game 4</td>
-                    <td>6</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>.000</td>
-                    <td>.167</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="row container center">
-                <form class="col card-panel l3">
-                    <p>Enter New Game Stats in Fields Below and the Click Submit</p>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of At Bats</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Hits</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Walks</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Strikeouts</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of RBIs</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Runs Scored</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Stolen Bases</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Innings Pitched</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Earned Runs</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Hits</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">assessment</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Enter # of Strikeouts</label>
-                        </div>
-                      </div>
-                    <div class="row">
-                    <div class="input-field col s12">
-                      <i class="material-icons prefix">assessment</i>
-                      <input id="icon_prefix" type="text" class="validate">
-                      <label for="icon_prefix">Enter # of Walks</label>
-                      <button class="btn pink waves-effect waves-blue" type="submit" name="action">Submit
-                        <i class="material-icons right">send</i>
-                        </button>
-                    </div>
-                  </div>
-                </form>
-        </div>
-  
-      </div>
-
       {{> footer}}
+<script src="/js/add-game.js"></script>

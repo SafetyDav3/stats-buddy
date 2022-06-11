@@ -1,17 +1,17 @@
-{{>nav}}
+{{>nav pageTitle}}
 
     <div class="row">
         {{> sidebar}}
         
   
               <div class="row container center">
-                <form class="col card-panel l3">
+                <form class="col card-panel l3" id="add-player">
                   <div class="row">
                     <div class="input-field col s12">
                       <i class="material-icons prefix">directions_walk</i>
-                      <input id="icon_prefix" type="text" class="validate">
-                      <label for="icon_prefix">Add New Player's Name</label>
-                      <button class="btn pink waves-effect waves-blue" type="submit" name="action">Submit
+                      <input id="player-input" type="text" class="validate">
+                      <label for="player-input">Add New Player's Name</label>
+                      <button class="btn pink waves-effect waves-blue" type="submit">Submit
                         <i class="material-icons right">send</i>
                         </button>
                     </div>
@@ -22,7 +22,7 @@
                 <thead>
                     <tr>
                         <th>League Name:</th>
-                        <th>Milwaukee's Finest</th>
+                        <th><a href="/league/{{players.league_id}}">{{players.league.name}}</a></th>
                         <th>Team Name:</th>
                         <th>The Micro Brewers</th>
                     </tr>
@@ -54,222 +54,12 @@
                 </thead>
         
                 <tbody>
+                  {{#each players.players}}
                   <tr>
-                    <td>lochlainn</td>
-                    <td>20</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>13</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>.250</td>
-                    <td>.350</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td><a href="/player/{{id}}">{{player_name}}</a></td>
+                    {{{seasonStats games}}}
                   </tr>
-                  <tr>
-                    <td>Ramiz</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Tamara</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Peter</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Leroy</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Deeann</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Gil</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Mathis</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Lena</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Emilia</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Sujay</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Skye</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
+                  {{/each}}
                 </tbody>
               </table>
         </div>
@@ -277,3 +67,4 @@
       </div>
 
       {{> footer}}
+<script src="/js/add-player.js"></script>

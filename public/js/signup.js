@@ -18,7 +18,7 @@ const signupFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace("/league");
+        document.location.replace("/leagues");
       } else {
         alert(
           "Signup failed. Please check your signup credentials and try again."

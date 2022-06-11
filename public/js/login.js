@@ -19,7 +19,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/league");
+      document.location.replace("/leagues");
     } else {
       alert(
         "Login failed.\nPlease check your login information or make a new account."
