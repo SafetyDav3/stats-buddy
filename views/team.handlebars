@@ -5,13 +5,13 @@
         
   
               <div class="row container center">
-                <form class="col card-panel l3">
+                <form class="col card-panel l3" id="add-player">
                   <div class="row">
                     <div class="input-field col s12">
                       <i class="material-icons prefix">directions_walk</i>
-                      <input id="icon_prefix" type="text" class="validate">
-                      <label for="icon_prefix">Add New Player's Name</label>
-                      <button class="btn pink waves-effect waves-blue" type="submit" name="action">Submit
+                      <input id="player-input" type="text" class="validate">
+                      <label for="player-input">Add New Player's Name</label>
+                      <button class="btn pink waves-effect waves-blue" type="submit">Submit
                         <i class="material-icons right">send</i>
                         </button>
                     </div>
@@ -67,3 +67,4 @@
       </div>
 
       {{> footer}}
+<script src="/js/add-player.js"></script>
