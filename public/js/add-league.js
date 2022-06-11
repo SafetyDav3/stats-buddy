@@ -15,7 +15,7 @@ const addLeague = async (event) => {
     });
 
     if (response.ok) {
-        document.location.replace('/leagues');
+        document.location.reload();
     } else {
         alert(response.statusText);
     }
