@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Player, Team } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
   Team.findAll({
     attributes: [
       'id',
@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
   Team.findOne({
     where: {
       id: req.params.id
@@ -56,7 +56,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   Team.create({
     team_name: req.body.team_name,
     manager: req.body.manager,
@@ -69,10 +69,9 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   Team.update(
     {
-      team_name: req.body.team_name,
       manager: req.body.manager
     },
     {
@@ -94,7 +93,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   Team.destroy({
     where: {
       id: req.params.id
