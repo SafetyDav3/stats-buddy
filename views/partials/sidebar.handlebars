@@ -33,12 +33,14 @@
               </div>
           <div class="container">
             <div class="card-panel">
+              {{!-- {{> sidebar leagues pageTitle}} --}}
+               {{!-- {{#if pageTitle == "All Leagues" }} --}}
                 <div class="input-field">
                     <select>
                         <option value="" selected disabled>Choose Your League</option>
-                        <option value="1">Mad City Bat Brigade</option>
-                        <option value="2">Milwaukee's Finest </option>
-                        <option value="3">Appleton Aces</option>
+                        {{#each leagues}}
+                        <option value="{{id}}">{{name}}</option>
+                        {{/each}}
                     </select>
                     <label>Leagues</label>
                 </div>

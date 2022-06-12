@@ -62,14 +62,21 @@ router.get('/league/:id', withAuth, (req, res) => {
         res.status(404).json({ message: 'No league found with this id' });
         return;
       }
+      League.findAll({
+        attributes: ['name', 'id'],
+      })
+      .then(allLeaguedata => {
 
+      
       // serialize the data
       const teams = dbLeagueData.get({ plain: true });
       const pageTitle = {pageTitle: 'All League Teams'};
+      const leagues = allLeaguedata.map(league => league.get({ plain: true }) );
 
       // pass data to template
       res.render('single-league', {
         teams,
+        leagues,
         pageTitle,
         loggedIn: req.session.loggedIn
       });
@@ -78,7 +85,9 @@ router.get('/league/:id', withAuth, (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+  })
 });
+
 
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
@@ -133,15 +142,21 @@ router.get('/team/:id', withAuth, (req, res) => {
           res.status(404).json({ message: 'No team found with this id' });
           return;
         }
+        League.findAll({
+          attributes: ['name', 'id'],
+        })
+        .then(allLeaguedata => {
         // serialize the data
         const players = dbPostData.get({ plain: true });
         const pageTitle = {pageTitle: 'Team Info'}
+        const leagues = allLeaguedata.map(league => league.get({ plain: true }) );
         console.log(players)
         
 
         // pass data to template
         res.render('team', {
           players,
+          leagues,
           pageTitle,
           loggedIn: req.session.loggedIn
         });
@@ -150,6 +165,7 @@ router.get('/team/:id', withAuth, (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
+    })
   });
 
   router.get('/player/:id', withAuth, (req, res) => {
@@ -206,14 +222,20 @@ router.get('/team/:id', withAuth, (req, res) => {
           res.status(404).json({ message: 'No player found with this id' });
           return;
         }
+        League.findAll({
+          attributes: ['name', 'id'],
+        })
+        .then(allLeaguedata => {
   
         // serialize the data
         const games = dbPostData.get({ plain: true });
         const pageTitle = {pageTitle: 'Player Stats'}
+        const leagues = allLeaguedata.map(league => league.get({ plain: true }) );
         console.log(games)
         // pass data to template
         res.render('player', {
           games,
+          leagues,
           pageTitle,
           loggedIn: req.session.loggedIn
         });
@@ -222,6 +244,7 @@ router.get('/team/:id', withAuth, (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
+    })
   });
 
 module.exports = router;
