@@ -30,14 +30,14 @@ module.exports ={
         let seasonAVG = (seasonHits/seasonAB).toFixed(3)
         let seasonOBP = ((seasonHits+seasonBB)/(seasonAB+seasonBB)).toFixed(3)
         let seasonERA = (9 * (seasonEarnedRuns/seasonInnings)).toFixed(2)
-
-        if (typeof seasonAVG != 'number') {
+        
+        if (isNaN(seasonAVG)) {
             seasonAVG = 0
         }
-        if (typeof seasonOBP != 'number') {
+        if (isNaN(seasonOBP)) {
             seasonOBP = 0
         }
-        if (typeof seasonERA != 'number') {
+        if (isNaN(seasonERA)) {
             seasonERA = 0
         }
 

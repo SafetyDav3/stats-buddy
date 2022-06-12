@@ -46,7 +46,7 @@ Game.init(
         defaultValue: 0
     },
     innings: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.DECIMAL(10, 1),
         allowNull: false,
         defaultValue: 0
     },

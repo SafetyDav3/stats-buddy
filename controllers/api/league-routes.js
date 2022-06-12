@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { League, Team } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
   League.findAll({
     attributes: [
       'id',
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
   League.findOne({
     where: {
       id: req.params.id
@@ -54,7 +54,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   League.create({
     name: req.body.name,
     user_id: req.session.user_id
@@ -68,7 +68,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   League.update(
     {
       name: req.body.name,
@@ -92,7 +92,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   League.destroy({
     where: {
       id: req.params.id
