@@ -24,7 +24,7 @@ const gameData = [
     rbi: 71,
     rs: 68,
     sb: 6,
-    innings: 112,
+    innings: 112.1,
     earned_runs: 4,
     hitsGivin: 8,
     k: 9,

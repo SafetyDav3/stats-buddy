@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Player, Game } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
   Player.findAll({
     attributes: [
       'id',
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
   Player.findOne({
     where: {
       id: req.params.id
@@ -54,7 +54,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   Player.create({
     player_name: req.body.player_name,
     team_id: req.body.team_id
@@ -66,7 +66,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   Player.update(
     {
       player_name: req.body.player_name,
@@ -91,7 +91,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   Player.destroy({
     where: {
       id: req.params.id

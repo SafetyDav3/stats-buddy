@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { User, League } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // get all users
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }
   })
@@ -13,7 +14,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
     where: {
