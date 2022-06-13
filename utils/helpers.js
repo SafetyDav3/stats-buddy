@@ -32,24 +32,46 @@ module.exports ={
         let seasonERA = (9 * (seasonEarnedRuns/seasonInnings)).toFixed(2)
         
         if (isNaN(seasonAVG)) {
-            seasonAVG = 0
+            seasonAVG = (0).toFixed(3)
         }
         if (isNaN(seasonOBP)) {
-            seasonOBP = 0
+            seasonOBP = (0).toFixed(3)
         }
         if (isNaN(seasonERA)) {
-            seasonERA = 0
+            seasonERA = (0).toFixed(2)
         }
-
+        
         seasonInnings = Math.trunc(seasonInnings) + (((seasonInnings - Math.trunc(seasonInnings)) * 3) / 10)
+        seasonInnings = Math.round(seasonInnings * 10) / 10
         
         const seasonData = '<td>' + seasonAB + '</td><td>' + seasonHits + '</td><td>' + seasonBB + '</td><td>' + seasonStrikeouts + '</td><td>' + seasonRBIs + '</td><td>' + seasonRS + '</td><td>' + seasonSB + '</td><td>' + seasonAVG + '</td><td>' + seasonOBP + '</td><td>' + seasonInnings + '</td><td>' + seasonEarnedRuns + '</td><td>' + seasonERA + '</td><td>' + seasonHitsGiven + '</td><td>' + seasonK + '</td><td>' + seasonWalks + '</td>';  
                                                                                                                                                                                                                                                            
 
         return seasonData;
     },
+    gameERA: (earned_runs, innings) => {
+        let gERA = (9 * (earned_runs/innings)).toFixed(2)
+        if (isNaN(gERA)) {
+            gERA = (0).toFixed(2)
+        }
+        return gERA
+    },
+    gameOBP: (hits, bb, ab) => {
+        let onBase = ((hits+bb)/(ab+bb)).toFixed(3)
+        if (isNaN(onBase)) {
+            onBase = (0).toFixed(3)
+        }
+        return onBase
+    },
     inc: (num) => {
         num = num + 1;
         return num;
+    },
+    gameAVG: (hits, ab) => {
+        let average = (hits/ab).toFixed(3);
+        if (isNaN(average)) {
+            average = (0).toFixed(3);
+        }
+        return average;
     }
 }
