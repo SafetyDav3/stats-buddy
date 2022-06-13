@@ -1,7 +1,7 @@
 {{>nav pageTitle}}
 
     <div class="row">
-        {{> sidebar}}
+        {{> sidebar }}
         
   
               <div class="row container center">
@@ -16,14 +16,6 @@
                         </button>
                     </div>
                   </div>
-                   <div class="input-field col s12">
-                      <i class="material-icons prefix">supervisor_account</i>
-                      <input id="player-input" type="text" class="validate">
-                      <label for="player-input">Add Manager's Name</label>
-                      <button class="btn pink waves-effect waves-blue" type="submit">Submit
-                        <i class="material-icons right">send</i>
-                        </button>
-                    </div>
                 </form>
 
               <table class="highlight centered responsive-table col s4">
@@ -38,6 +30,19 @@
                     </tr>
                 </thead>
               </table>
+                  
+                <form class="col card-panel l3" id="add-manager">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">supervisor_account</i>
+                      <input id="manager-input" type="text" class="validate">
+                      <label for="manager-input">Update Manager's Name</label>
+                      <button class="btn pink waves-effect waves-blue" type="submit">Submit
+                        <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                    </div>
+                </form>
 
               <br>
 
@@ -78,3 +83,4 @@
 
       {{> footer}}
 <script src="/js/add-player.js"></script>
+<script src="/js/add-manager.js"></script>
