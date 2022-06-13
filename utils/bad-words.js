@@ -1,10 +1,6 @@
 const Filter = require("bad-words");
 const filter = new Filter();
 
-// const text = "good";
-
-console.log(filter.clean(text));
-
 const badWords = function (text) {
   const checkedText = filter.clean(text);
   const bleep = /[\*]+/;
@@ -15,9 +11,5 @@ const badWords = function (text) {
     return false;
   }
 };
-
-// console.log(checkedText);
-// const result = badWords(text);
-// consol.log(result);
 
 module.exports = badWords;
