@@ -20,7 +20,7 @@ Node.js, Express.js, Sequelize, express-session, Handlebars.js, npm package bad-
 Sign-up or login is required to use the application, once authenticated 
 
 ## Contributing
-Alan Edelbeck, David Williams, Alex Kress, Michael McMahon
+Alan Edlegbeck, David Williams, Alex Kress, Michael McMahon
 
 ## Tests
 No tests are currently operational for this application.
