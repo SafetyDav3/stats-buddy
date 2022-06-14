@@ -1,8 +1,8 @@
 const addManager = async (event) => {
     event.preventDefault();
 
-    const manager = document.getElementById().value.trim();
-
+    const manager = document.getElementById('manager-input').value.trim();
+    console.log(manager)
     const response = await fetch("/api/teams/", {
         method: 'PUT',
         body: JSON.stringify({

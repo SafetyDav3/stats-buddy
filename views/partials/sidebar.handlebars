@@ -36,7 +36,7 @@
               {{!-- {{> sidebar leagues pageTitle}} --}}
                {{!-- {{#if pageTitle == "All Leagues" }} --}}
                 <div class="input-field">
-                    <select>
+                    <select id="league">
                         <option value="" selected disabled>Choose Your League</option>
                         {{#each leagues}}
                         <option value="{{id}}">{{name}}</option>
@@ -50,3 +50,4 @@
                 <p class="grey-text text-lighten-2"> Lorem ipsum dolor sit amet</p>
               </div>
         </div>
+<script src="/js/go-to-league.js"></script>

@@ -28,7 +28,6 @@ router.get('/leagues', withAuth, async (req, res) => {
     .then(dbLeagueData => {
       const leagues = dbLeagueData.map(league => league.get({plain: true}));
       const pageTitle = {pageTitle: 'All Leagues'}
-      console.log(leagues)
       res.render('leagues', {
         leagues,
         pageTitle,
@@ -69,10 +68,10 @@ router.get('/league/:id', withAuth, (req, res) => {
 
       
       // serialize the data
+      const leagues = allLeaguedata.map(league => league.get({ plain: true }) );
       const teams = dbLeagueData.get({ plain: true });
       const pageTitle = {pageTitle: 'All League Teams'};
-      const leagues = allLeaguedata.map(league => league.get({ plain: true }) );
-
+      console.log(leagues)
       // pass data to template
       res.render('single-league', {
         teams,
@@ -150,8 +149,6 @@ router.get('/team/:id', withAuth, (req, res) => {
         const players = dbPostData.get({ plain: true });
         const pageTitle = {pageTitle: 'Team Info'}
         const leagues = allLeaguedata.map(league => league.get({ plain: true }) );
-        console.log(players)
-        
 
         // pass data to template
         res.render('team', {
@@ -231,7 +228,7 @@ router.get('/team/:id', withAuth, (req, res) => {
         const games = dbPostData.get({ plain: true });
         const pageTitle = {pageTitle: 'Player Stats'}
         const leagues = allLeaguedata.map(league => league.get({ plain: true }) );
-        console.log(games)
+        console.log(leagues)
         // pass data to template
         res.render('player', {
           games,
