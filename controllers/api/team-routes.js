@@ -3,7 +3,7 @@ const { Player, Team } = require("../../models");
 const withAuth = require("../../utils/auth");
 const badWords = require("../../utils/bad-words.js");
 
-router.get('/', withAuth, (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Team.findAll({
     attributes: ["id", "team_name", "manager", "league_id"],
     order: [["team_name", "ASC"]],
@@ -21,7 +21,7 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-router.get('/:id', withAuth, (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   Team.findOne({
     where: {
       id: req.params.id,
@@ -50,7 +50,7 @@ router.get('/:id', withAuth, (req, res) => {
 });
 
 router.post("/", withAuth, (req, res) => {
-  if (badWords(req.body.team_name)) {
+  if (badWords(req.body.team_name) || badWords(req.body.manager)) {
     res.status(400).send("No bad words allowed!");
     return;
   }
@@ -66,10 +66,10 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
-router.put('/:id', withAuth, (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   Team.update(
     {
-      manager: req.body.manager
+      manager: req.body.manager,
     },
     {
       where: {
@@ -92,7 +92,7 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Team.destroy({
     where: {
       id: req.params.id,
