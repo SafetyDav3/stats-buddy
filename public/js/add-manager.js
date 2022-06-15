@@ -2,11 +2,14 @@ const addManager = async (event) => {
     event.preventDefault();
 
     const manager = document.getElementById('manager-input').value.trim();
-    console.log(manager)
-    const response = await fetch("/api/teams/", {
+    const team_id = window.location.toString().split("/")[
+        window.location.toString().split("/").length - 1
+      ];
+    const response = await fetch("/api/teams/" + team_id, {
         method: 'PUT',
         body: JSON.stringify({
-            manager
+            manager,
+            
         }),
         headers: {
             'Content-Type': 'application/json',
